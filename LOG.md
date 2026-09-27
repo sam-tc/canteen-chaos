@@ -81,3 +81,17 @@ you noticed it.
 **Checked:** Refreshed the page and searched "ra" again. The suggestions that were hidden were now properly visible above the category bar, and I was able to click different suggestions like Bread Pakora and Aloo Paratha, like before. 
 
 **Time:** about 30 minutes, including reproducing the issue, inspecting the CSS, testing the stacking order in DevTools, and then finally applying the fix.
+
+
+
+### CC-02: "Can't read anything in dark mode"
+
+**Reproduced:** Opened the site in dark mode. The dish names and prices were almost invisible because the text was staying dark, while light mode looked normal. also to mention that the site automatically opened in dark mode(maybe due to system settings idk)
+
+**Cause:** `.dish-body` had a hard-coded `color: #2b2118`. The dish name inherits its color from `.dish-body`, so this was overriding the color provided by the dark-mode theme.
+
+**Fix:** Removed the hard-coded color from `.dish-body` so the text can inherit the theme's color instead of always using a dark color.
+
+**Checked:** Tested both dark and light mode. The dish names and prices are now readable in both. (though they were already readable in light mode but just to check if light mode got ruined because of fixing the dark mode, but no both work completely fine now)
+
+**Time:** About 30 minutes.
