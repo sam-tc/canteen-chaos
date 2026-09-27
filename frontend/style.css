@@ -245,6 +245,7 @@ h1, h2, h3 { margin: 0; }
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .dish-card.blocked { opacity: 0.6; }

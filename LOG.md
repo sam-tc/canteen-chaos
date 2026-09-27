@@ -95,3 +95,17 @@ you noticed it.
 **Checked:** Tested both dark and light mode. The dish names and prices are now readable in both. (though they were already readable in light mode but just to check if light mode got ruined because of fixing the dark mode, but no both work completely fine now)
 
 **Time:** About 30 minutes.
+
+
+
+### CC-03: "The menu is wider than my phone"
+
+**Reproduced:** Tested the site at a mobile viewport of 324px wide. The dish cards were wider than the available space, so the right side of the card and the Add to Cart button were getting cut off.
+
+**Cause:** The `.dish-card` grid items were not shrinking enough to fit inside the available grid width on small screens, which caused the card to overflow horizontally.
+
+**Fix:** Allowed `.dish-card` to shrink to the available grid width so that it fits properly on smaller screens.
+
+**Checked:** Tested again at 324px wide and confirmed that the full dish card and Add to Cart button are visible. Also checked a wider viewport to make sure the normal layout still works.
+
+**Time:** About 25 minutes.
