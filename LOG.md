@@ -68,3 +68,16 @@ stuck is not.
 Anything not on the bug log: a problem you found yourself, a test you
 wrote, or a fix you are unsure about. Same format, plus one line on how
 you noticed it.
+
+
+### CC-01 : "The search suggestions are behind everything"
+
+**Reproduced:** Searched "ra" in the search bar, the options did show up but some middle options were hidden behind the section where categories were listed(breakfast, lunch, chinese, snacks etc.). Clicking on the options (that were visible), did allow me to add them to cart though.
+
+**Cause:** The `.suggest-box` had a high z-index (100), but it was inside `.search-wrap` that was its parent div, which had a lower stacking level (1) than `.cat-tabs` (40). Therefore, increasing the `.suggest-box` z-index alone could not place it above the category bar.
+
+**Fix:** Increased the z-index of `.search-wrap` so that the search section stays above the category bar and the suggestions can appear clearly & properly on top.
+
+**Checked:** Refreshed the page and searched "ra" again. The suggestions that were hidden were now properly visible above the category bar, and I was able to click different suggestions like Bread Pakora and Aloo Paratha, like before. 
+
+**Time:** about 30 minutes, including reproducing the issue, inspecting the CSS, testing the stacking order in DevTools, and then finally applying the fix.
