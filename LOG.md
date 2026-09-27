@@ -109,3 +109,17 @@ you noticed it.
 **Checked:** Tested again at 324px wide and confirmed that the full dish card and Add to Cart button are visible. Also checked a wider viewport to make sure the normal layout still works.
 
 **Time:** About 25 minutes.
+
+
+
+### CC-04: "The buttons don't work on my tablet"
+
+**Reproduced:** Tested the site on a tablet. The Add to Cart and star buttons did nothing, even though they worked on other screen sizes.
+
+**Cause:** The tablet CSS had transparent `::after` overlays covering the buttons and blocking clicks.
+
+**Fix:** Added `pointer-events: none` to the `.dish-card::after` and `.img-wrap::after` overlays so clicks can reach the buttons underneath.
+
+**Checked:** Tested both buttons on the tablet and confirmed they work. Also checked the laptop/phone layout.
+
+**Time:** About 50 minutes including understanding the concepts and finding the bugs and then rectifying them.

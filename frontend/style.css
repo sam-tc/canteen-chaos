@@ -1041,8 +1041,8 @@ body.is-offline .site-header { filter: grayscale(0.4); }
     transition: background 0.2s;
   }
 
-  .dish-card::after { left: 0; right: 0; bottom: 0; height: 58px; z-index: 3; }
-  .img-wrap::after { top: 0; right: 0; width: 52px; height: 52px; z-index: 1; }
+  .dish-card::after { left: 0; right: 0; bottom: 0; height: 58px; z-index: 3; pointer-events: none;}
+  .img-wrap::after { top: 0; right: 0; width: 52px; height: 52px; z-index: 1; pointer-events: none;}
 
   .dish-card.blocked::after { background: rgba(255, 250, 244, 0.3); }
 }
