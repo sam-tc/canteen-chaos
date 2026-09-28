@@ -155,3 +155,16 @@ of the `.filters` element.
 **Checked:** Tested an order where the quantity was greater than the available stock. The order is now rejected.
 
 **Time:** About an hour, including understanding the concepts first.
+
+### Additional fix — cart quantity could exceed stock
+
+**How I noticed it** While reproducing CC-06, I noticed that the cart could be increased beyond the available stock before checkout.
+
+**Cause** The frontend quantity check only used the maximum quantity allowed for one dish. It did not consider the dish's current stock.
+
+**Fix** Updated the quantity check to make sure the cart doesn't go above the available stock or the maximum allowed quantity.
+
+**Checked** Tested a dish with limited stock and confirmed that the cart cannot be increased beyond the available quantity.
+
+
+
