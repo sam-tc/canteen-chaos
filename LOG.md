@@ -185,3 +185,16 @@ of the `.filters` element.
 **Time:** about 40 minutes, including finding where the problem was and testing the fix.
 
 
+
+### CC-07 — "Cancelling makes it worse"
+
+**Reproduced:** There were 18 items(SpringRoll) left. I ordered 1, so it became 17. When I cancelled the order, it became 16 instead of going back to 18.
+
+**Cause:** The code was removing the cancelled quantity from the stock again instead of adding it back.
+
+**Fix:** Changed it so cancelling an order adds the cancelled quantity back to the stock.
+
+**Checked:** Tested it again and the stock went from 18 -> 17 -> 18 after cancelling.
+
+**Time:** about 20 minutes, including finding the code causing the problem and testing the fix.
+
