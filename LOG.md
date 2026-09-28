@@ -211,3 +211,17 @@ of the `.filters` element.
 **Checked:** Tested the expired coupon(FRESHERS24) again and it showed "This coupon has expired". I also tested an active coupon(BYTE10) and it still worked.
 
 **Time:** about 20 minutes, including finding the problem and testing the fix.
+
+
+
+### CC-09 — "The menu shows more dishes than it should"
+
+**Reproduced:** The menu was showing a much longer list of dishes at once instead of showing a few dishes and loading more as I scrolled.
+
+**Cause:** The pagination code correctly created a smaller list, but returned the full list instead of the paginated items.
+
+**Fix:** Changed it to return the paginated `items` instead of the full list.
+
+**Checked:** Refreshed the menu and confirmed that only 5 dishes are shown initially and more load when scrolling.
+
+**Time:** about 20 minutes, including finding the problem and testing the fix.
