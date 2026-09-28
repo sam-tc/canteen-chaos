@@ -123,3 +123,24 @@ you noticed it.
 **Checked:** Tested both buttons on the tablet and confirmed they work. Also checked the laptop/phone layout.
 
 **Time:** About 50 minutes including understanding the concepts and finding the bugs and then rectifying them.
+
+
+
+
+### CC-05: "The category bar scrolls away on my phone"
+
+**Reproduced:** On a viewport smaller than 480px, scroll down through the menu.
+The category/filter bar scrolls away instead of remaining visible.
+
+**Cause:** The mobile `.view` rule used `overflow-x: hidden`.
+This created an overflow context that interfered with the sticky positioning
+of the `.filters` element.
+
+**Fix:** Changed `overflow-x: hidden` to `overflow-x: clip` for `.view` on mobile.
+
+**Checked:** Tested on the mobile viewport and confirmed that the filter/category bar remains visible while the menu scrolls. Also checked that horizontal overflow remains clipped.
+
+**Time:** About 30 minutes.
+
+
+
