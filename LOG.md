@@ -225,3 +225,17 @@ of the `.filters` element.
 **Checked:** Refreshed the menu and confirmed that only 5 dishes are shown initially and more load when scrolling.
 
 **Time:** about 20 minutes, including finding the problem and testing the fix.
+
+
+
+### CC-10: "Sorting by price is backwards"
+
+**Reproduced:** The "Price: Low to High" option was showing the expensive dishes on top and then moving towards cheaper, and "Price: High to Low" was showing the cheaper dishes on top and then moving towards expensive ones.
+
+**Cause:** The two price sorting functions were the wrong way around.
+
+**Fix:** Swapped the price sorting logic so low to high starts with the cheapest price and high to low starts with the most expensive price.
+
+**Checked:** Tested both options again and confirmed that the prices are now sorted in the correct order.
+
+**Time:** about 15 minutes, including finding the problem and testing the fix.
