@@ -9,30 +9,6 @@ honestly still counts for something.
 Delete the example before you submit.
 
 
-
-## Example — delete this
-
-### CC-99 — "The cart total is wrong"
-
-**Reproduced:** Added 2 dosas at Rs. 60 each. The cart showed
-Rs. 119.99999 instead of Rs. 130. Happened every time, on any dish with
-a price ending in .50.
-
-**Cause:** The total was being added up with plain floating point and
-never rounded, so 0.1 + 0.2 style errors showed up on screen. The
-rounding helper existed but this one place was not using it.
-
-**Fix:** Ran the total through the existing rounding helper instead of
-adding a new one, so every price on screen goes through the same path.
-
-**Checked:** Cart, checkout and the order screen all show Rs. 130 now.
-Prices without decimals still show without a trailing .00.
-
-**Time:** about 40 minutes, most of it working out that the cart and the
-order screen round in different places.
-
-
-
 ## CC-0X — "<the complaint, in short>"
 
 **Reproduced:**
@@ -72,7 +48,7 @@ you noticed it.
 
 ### CC-01 : "The search suggestions are behind everything"
 
-**Reproduced:** Searched "ra" in the search bar, the options did show up but some middle options were hidden behind the section where categories were listed(breakfast, lunch, chinese, snacks etc.). Clicking on the options (that were visible), did allow me to add them to cart though.
+**Reproduced:** Searched "ra" in the search bar, the options did show up but some middle ones were hidden behind the section where categories were listed(breakfast, lunch, chinese, snacks etc.). Clicking on the options (that were visible), did allow me to add them to cart though.
 
 **Cause:** The `.suggest-box` had a high z-index (100), but it was inside `.search-wrap` that was its parent div, which had a lower stacking level (1) than `.cat-tabs` (40). Therefore, increasing the `.suggest-box` z-index alone could not place it above the category bar.
 
