@@ -198,3 +198,16 @@ of the `.filters` element.
 
 **Time:** about 20 minutes, including finding the code causing the problem and testing the fix.
 
+
+
+### CC-08: "An old coupon still works"
+
+**Reproduced:** I used `FRESHERS24`, which had already expired, and it still applied a ₹30 discount.
+
+**Cause:** The coupon validation checked things like uses left, minimum order and time slot, but it did not check the coupon's expiry date.
+
+**Fix:** Added a check for `expiresAt` so expired coupons are rejected.
+
+**Checked:** Tested the expired coupon(FRESHERS24) again and it showed "This coupon has expired". I also tested an active coupon(BYTE10) and it still worked.
+
+**Time:** about 20 minutes, including finding the problem and testing the fix.
