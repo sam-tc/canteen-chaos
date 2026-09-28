@@ -144,3 +144,14 @@ of the `.filters` element.
 
 
 
+### CC-06: "I ordered more than they had"
+
+**Reproduced:** I was able to add more items to the cart than were available in stock and place the order successfully.
+
+**Cause:** The backend only checked if the stock was zero. It did not check if the quantity being ordered was greater than the available stock.
+
+**Fix:** Added a check to make sure the requested quantity is not more than the available stock.
+
+**Checked:** Tested an order where the quantity was greater than the available stock. The order is now rejected.
+
+**Time:** About an hour, including understanding the concepts first.
