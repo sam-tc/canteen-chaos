@@ -144,16 +144,11 @@ async function loadMyOrders() {
     return showStatus(
       ordersStatus,
       emptyBlock(
-        'No orders found',
-        `Requested member ${deviceId()}. This browser has ${state.tokens.length} saved order token(s).`
+        'No orders yet',
+        `Your placed orders will appear here.`
       )
     );
   }
-
-  showStatus(
-    ordersStatus,
-    html`<p class="status-sub">Requested member ${deviceId()} · server returned ${orders.length} order(s) · this browser has ${state.tokens.length} saved token(s)</p>`
-  );
 
   const active = orders.filter((o) => Array.isArray(o.allowedNext) && o.allowedNext.length > 0);
   const past = orders.filter((o) => !Array.isArray(o.allowedNext) || o.allowedNext.length === 0);

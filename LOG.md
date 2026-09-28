@@ -168,3 +168,20 @@ of the `.filters` element.
 
 
 
+### Extra credit — "My Orders was not showing my orders"
+
+**How I noticed it:** I placed an order and could see it on the Counter page, but it was not showing on my My Orders page.
+
+**Reproduced:** I placed an order and checked both pages. The order was visible on the Counter page, but My Orders showed "No orders found".
+
+**Cause:** The frontend was sending `memberId`, but the backend was checking for `userId`. Because of this, the backend could not find my orders.
+
+**Fix:** Changed the backend to use `memberId`, which is the same parameter the frontend sends.
+
+**Checked:** Placed another order and checked both pages. The order now shows correctly on My Orders and the Counter page.
+
+**Extra UI fix:** While checking this, I noticed that the "Happening now" and "Earlier" headings were messing up the order card alignment. I changed the CSS so both headings take the full width of the page.
+
+**Time:** about 40 minutes, including finding where the problem was and testing the fix.
+
+
