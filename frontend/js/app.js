@@ -11,6 +11,11 @@ defineRoute('menu', {
   },
 });
 
+defineRoute('saved', {
+  title: 'Saved Dishes',
+  enter: loadSavedDishes,
+});
+
 defineRoute('orders', {
   title: 'My Orders',
   enter: loadMyOrders,
