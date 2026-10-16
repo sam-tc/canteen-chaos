@@ -169,3 +169,22 @@ of the `.filters` element.
 **Checked:** Tested both options again and confirmed that the prices are now sorted in the correct order.
 
 **Time:** about 15 minutes, including finding the problem and testing the fix.
+
+
+### Extra credit — "Added a Saved Dishes page"
+
+**How I noticed it:** While testing CC-04, I noticed that clicking the star button saved a dish, but there was no separate page where I could view all my saved dishes.
+
+**Reproduced:** I saved a few dishes using the star button and looked for a way to view them together. The dishes were getting saved, but I had to go back to the Menu page and find them individually.
+
+**Cause:** The app was already storing favourite dishes in the browser, but there was no separate page to display them.
+
+**Fix:** Added a Saved Dishes page in the navigation bar where users can see all their saved dishes. I used the existing food cards and favourite system so users can also remove dishes from favourites and add them directly to their cart.
+
+**Checked:** Saved multiple dishes and confirmed that they appeared on the Saved Dishes page. Also tested removing favourites, adding dishes to the cart, and refreshing the website to make sure the saved dishes were still there.
+
+**Extra UI fix:** Used the existing menu card design for the Saved Dishes page so it stays consistent with the rest of the website.
+
+**Time:** about 25 minutes.
+
+
